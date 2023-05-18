@@ -19,16 +19,13 @@ jobs:
         with:
           node-version: "18"
           cache: "yarn"
-      
-      - name: Create .env
+
+      - name: Build
         run: |
           echo "CLOUDINARY_FOLDER=${{ secrets.CLOUDINARY_FOLDER }}" > .env
           echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}" > .env
           echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}" > .env
           echo "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}" > .env
-  
-      - name: Build
-        run: |
           cat .env
           yarn install
           yarn run build
