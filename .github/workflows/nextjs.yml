@@ -33,6 +33,7 @@ jobs:
 
       - name: Build
         run: |
+          cat .env
           yarn install
           yarn run build
           yarn run export
