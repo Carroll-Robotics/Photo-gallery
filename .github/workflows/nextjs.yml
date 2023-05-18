@@ -25,7 +25,6 @@ jobs:
           cat .env
           yarn install
           yarn run build
-          yarn run export
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
