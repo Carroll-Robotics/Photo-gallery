@@ -21,10 +21,11 @@ jobs:
           cache: "yarn"
       
       - name: Create .env
-        run: echo "CLOUDINARY_FOLDER=${{ secrets.CLOUDINARY_FOLDER }}" > .env
-        run: echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}" > .env
-        run: echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}" > .env
-        run: echo "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}" > .env
+        run: |
+          echo "CLOUDINARY_FOLDER=${{ secrets.CLOUDINARY_FOLDER }}" > .env
+          echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}" > .env
+          echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}" > .env
+          echo "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}" > .env
   
       - name: Build
         run: |
